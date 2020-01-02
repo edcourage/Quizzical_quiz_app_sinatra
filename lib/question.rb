@@ -1,5 +1,4 @@
 require 'data_mapper'
-require './db/data_mapper_setup'
 
 class Question
   include DataMapper::Resource
@@ -16,5 +15,5 @@ class Question
   def self.random_question
     self.all.sample
   end
-  
+
 end
