@@ -12,4 +12,9 @@ class Question
   property :answer_4, Text
   property :correct_answer, Text
   property :category, String
+
+  def self.random_question
+    self.all.sample
+  end
+  
 end
