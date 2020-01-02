@@ -1,1 +1,5 @@
-require 'question' 
+require 'question'
+
+describe Question do
+  
+end

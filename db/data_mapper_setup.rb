@@ -2,11 +2,10 @@ require 'data_mapper'
 require 'dm-postgres-adapter'
 
 #todo - add model files
-# require_relative '../lib/Account'
-# require_relative '../lib/listing'
-# require_relative '../lib/booking'
+require_relative '../lib/question'
 
-DataMapper.setup(:default, "postgres://localhost/quizzical_#{ENV['RACK_ENV']}")
+
+DataMapper.setup(:default, "postgres://localhost/quizzical_#{ ENV['RACK_ENV'] == nil ? 'development' : ENV['RACK_ENV']}")
 
 #This checks the models for validity and initializes all properties associated with relationships.
 DataMapper.finalize

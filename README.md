@@ -5,6 +5,7 @@ Let's Get Quizzical!
 _Copy and paste the below into the terminal_
 
 - `rake db_create`
+- `rake db_populate`
 
 ### User Storys
 ```
