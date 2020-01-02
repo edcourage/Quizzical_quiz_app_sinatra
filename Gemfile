@@ -16,6 +16,7 @@ gem 'rack-test'
 group :test do
   gem 'rspec'
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false

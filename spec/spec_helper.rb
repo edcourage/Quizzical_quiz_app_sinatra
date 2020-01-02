@@ -2,13 +2,15 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-# require 'data_mapper'
-# require 'database_cleaner'
+require 'data_mapper'
+require 'database_cleaner'
 require 'simplecov'
 require 'simplecov-console'
+require './db/questions_table_populator.rb'
+require_relative 'db_helpers'
 
 Capybara.app = Quizzical
-
+Capybara.javascript_driver = :selenium
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Formatter::Console,])
 SimpleCov.start
 

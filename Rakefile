@@ -1,4 +1,4 @@
-
+require './db/questions_table_populator.rb'
 
 task :db_create do
   sh('psql', '-c', 'CREATE DATABASE quizzical_development;')
@@ -6,7 +6,5 @@ task :db_create do
 end
 
 task :db_populate do
-
-  ruby './db/questions_table_populator.rb'
-
+  populate_questions_table
 end

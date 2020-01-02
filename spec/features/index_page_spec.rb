@@ -14,4 +14,13 @@ feature 'Index page' do
     expect(page).to have_button("How To Play")
   end
 
+  # scenario 'Expect page to diplay instuction after how to play is pressed' do
+  #   visit '/'
+  #
+  #   click_button "How To Play"
+  #
+  #   expect(page).to have_text "Each question has 4 choices... selected the one you think is right!"
+  #
+  # end
+
 end
