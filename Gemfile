@@ -11,6 +11,7 @@ gem 'dm-postgres-adapter'
 gem 'sinatra-flash'
 gem 'sinatra-partial'
 gem 'shotgun'
+gem 'rack-test'
 
 group :test do
   gem 'rspec'

@@ -1,6 +1,10 @@
 ## Quizzical
 Let's Get Quizzical!
 
+### Set Up
+
+-- rake db_create
+
 ### User Storys
 ```
 As a player

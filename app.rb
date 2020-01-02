@@ -3,6 +3,6 @@ require 'sinatra'
 
 class Quizzical < Sinatra::Base
   get '/' do
-    "Quizzical"
+    "Quizzical #{ENV['RACK_ENV']}"
   end
 end
