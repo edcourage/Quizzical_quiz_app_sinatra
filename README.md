@@ -19,4 +19,8 @@ I would like to select 'Start' on the home page.
 As a player
 So I know how to play the game
 I would like to select 'How To Play' on the home page.
+
+As a player
+So I can play
+I would like to see a question with 4 possible answers
 ```
