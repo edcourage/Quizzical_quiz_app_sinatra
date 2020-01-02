@@ -2,8 +2,9 @@
 Let's Get Quizzical!
 
 ### Set Up
+_Copy and paste the below into the terminal_
 
--- rake db_create
+- `rake db_create`
 
 ### User Storys
 ```
