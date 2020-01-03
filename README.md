@@ -3,7 +3,7 @@ Let's Get Quizzical!
 
 ### Set Up
 _Copy and paste the below into the terminal_
-
+- `bundle install`
 - `rake db_create`
 - `rake db_populate`
 

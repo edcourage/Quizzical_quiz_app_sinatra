@@ -1,13 +1,13 @@
-<script src="jQuery.js"></script>
-<script src="src/interface.js"></script>
 
 <h1 id='title'>Quizzical</h1>
+<div class="startHowToPlayOption">
+  <form action="/questions" >
+    <button type="submit" id='indexButton'>Start</button>
+  </form>
 
-<form action="/questions" >
-  <button type="submit" id='indexButton'>Start</button>
-</form>
+  <button type="button" id='howToPlayIndexButton'>How To Play</button>
 
-<button type="button" id='howToPlayIndexButton'>How To Play</button>
+</div>
 
 <div class="howToPlay">
   <p id='howToPlayInstructions'></p>

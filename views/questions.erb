@@ -1,1 +1,8 @@
-<h3 id=question ><%=@question.question%></h3>
+<h3 id=question > <%=@question.question%></h3>
+
+<div class="possibleAnswers">
+  <button type="button" name="answer_1"> <%= @question.answer_1 %> </button>
+  <button type="button" name="answer_2"> <%= @question.answer_2 %> </button>
+  <button type="button" name="answer_3"> <%= @question.answer_3 %> </button>
+  <button type="button" name="answer_4"> <%= @question.answer_4 %> </button>
+</div>
