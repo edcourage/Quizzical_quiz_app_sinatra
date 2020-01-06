@@ -15,4 +15,12 @@ feature "questions" do
     expect(page).to have_css(".possibleAnswers", text: "Rome")
     expect(page).to have_css(".possibleAnswers", text: "Vienna")
   end
+
+  scenario "If I select the correct answers I am notified" do
+    add_single_question_to_table
+    visit '/'
+    click_button "Start"
+    click_button "Athens"
+    expect(page).to have_css("#answerOutcome", text: "Correct!")
+  end
 end

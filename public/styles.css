@@ -49,6 +49,14 @@ button:hover {
   text-shadow: 2px 1px red;
 }
 
+#answerOutcome {
+  text-align: center;
+  font-family: 'Abel', sans-serif;
+  color: Yellow;
+  font-size: 20px;
+  text-shadow: 1px 0.5px red;
+}
+
 .howToPlay {
   text-align: center;
   font-family: 'Abel', sans-serif;
