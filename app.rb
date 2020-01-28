@@ -2,6 +2,7 @@ require 'data_mapper'
 require 'sinatra'
 require './db/data_mapper_setup'
 require './lib/question'
+require './lib/game'
 
 class Quizzical < Sinatra::Base
   enable :sessions
@@ -11,7 +12,8 @@ class Quizzical < Sinatra::Base
   end
 
   get '/questions' do
-    @question = Question.random_question
+    @game = Game.new
+    @question = @game.new_question
 
     session[:correct_answer] = @question.correct_answer
     erb :questions
