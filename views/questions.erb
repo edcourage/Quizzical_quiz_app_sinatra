@@ -1,13 +1,13 @@
 
-
-
-
 <div class="questionsInfo">
   <h4 id="questionNumber">Question 1 of 10<h4>
     <p id="answerOutcome">* Previous Question Outcome * <br> <%= params[:result] %> </p>
-  <h3 id=question > <%=@question.question%></h3>
+
 </div>
 
+<%if @question != nil %>
+
+<h3 id=question > <%=@question.question%></h3>
 <div class="possibleAnswers">
   <form action="/questions" method="post">
     <button type="submit" name="selected_answer" value="<%= @question.answer_1 %>" > <%= @question.answer_1 %> </button>
@@ -18,3 +18,6 @@
   </form>
 
 </div>
+<%  else %>
+  <h3 id=question >You've run out of questions... come on, you think I've got all day to think of new questions. Play something else!</h3>
+<%  end %>

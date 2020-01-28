@@ -4,10 +4,18 @@ class Game
     @questionTracker = []
   end
 
+  def self.create
+    @game = self.new
+  end
+
+  def self.instance
+    @game
+  end
+
   def new_question
     question = @question.random_question
     if @questionTracker.include?(question)
-      if @questionTracker.length == @question.all.length
+      if @questionTracker.count != @question.all.count
         while @questionTracker.include?(question) do
           question = @question.random_question
         end
