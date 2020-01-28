@@ -23,4 +23,12 @@ feature "questions" do
     click_button "Athens"
     expect(page).to have_css("#answerOutcome", text: "Correct!")
   end
+
+  scenario "You're notified that its the first question" do
+    add_single_question_to_table
+    visit '/'
+    click_button "Start"
+    expect(page).to have_css("#questionNumber", text: "Question 1 of 10")
+  end
+
 end

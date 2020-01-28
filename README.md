@@ -38,6 +38,10 @@ So I can keep playing
 I would like to get a new question
 
 As a player
+So I don't repeat the question
+I would like to have a new question every time
+
+As a player
 So I can keep track of my questions
 I would like to see the question number
 
