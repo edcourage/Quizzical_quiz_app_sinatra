@@ -3,8 +3,8 @@ rvm:
  - 2.6.5
 services:
 - postgresql
-before_install:
-- gem install -v 1.17.3 bundler
+install:
+  - bundle install
 script:
 - bundle exec rake db_create_and_populate
 - bundle exec rspec
