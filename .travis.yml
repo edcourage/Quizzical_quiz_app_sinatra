@@ -3,11 +3,12 @@ rvm:
  - 2.6.3
 services:
 - postgresql
-before_install:
-- gem install data_objects
-- gem install do_postgres
+addons:
+  postgresql: "11.5"
+
 install:
   - bundle install
 script:
+- bundle install
 - bundle exec rake db_create_and_populate
 - bundle exec rspec
