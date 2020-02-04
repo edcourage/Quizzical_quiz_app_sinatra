@@ -12,7 +12,6 @@ end
 task :db_create_and_populate do
   sh('psql', '-c', 'CREATE DATABASE quizzical_development;')
   sh('psql', '-c', 'CREATE DATABASE quizzical_test;')
+  sh('psql', '-c', 'CREATE DATABASE quizzical_production;')
   populate_questions_table
 end
-
-task default: :db_create_and_populate
