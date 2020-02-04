@@ -15,6 +15,6 @@ task :db_create_and_populate do
   populate_questions_table
 end
 
-task :db_create_pruduction do
+task :db_create_production do
   sh('psql', '-c', 'CREATE DATABASE quizzical_production;')
 end
