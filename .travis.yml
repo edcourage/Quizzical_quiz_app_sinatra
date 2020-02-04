@@ -11,7 +11,7 @@ before_install:
 install:
   - bundle install
 before_script:
-  - bundle exec rake db_create
+   - psql -c 'create database quizzical_test;' -U postgres
 script:
 - bundle exec rake db_populate
 - bundle exec rspec
