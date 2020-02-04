@@ -4,6 +4,7 @@ rvm:
 services:
 - postgresql
 before_install:
+- gem install data_objects
 - gem install do_postgres
 install:
   - bundle install
