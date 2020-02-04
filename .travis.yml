@@ -4,7 +4,7 @@ rvm:
 services:
 - postgresql
 before_install:
-- gem install do_postgres -v '0.10.16'
+- gem install do_postgres
 install:
   - bundle install
 script:
