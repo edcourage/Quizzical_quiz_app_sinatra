@@ -5,7 +5,8 @@ services:
 - postgresql
 addons:
   postgresql: "11.5"
-
+before_install:
+  - gem install do_postgres -v '0.10.17' --source
 install:
   - bundle install
 script:
