@@ -8,9 +8,9 @@ addons:
 before_install:
   - sudo apt-get install postgresql-9.5 postgresql-server-dev-9.5 libpq-dev
   - gem install do_postgres
+  - bundle exec rake db_create
 install:
   - bundle install
 script:
-- bundle install
-- bundle exec rake db_create_and_populate
+- bundle exec rake db_populate
 - bundle exec rspec
