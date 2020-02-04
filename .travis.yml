@@ -3,6 +3,8 @@ rvm:
  - 2.6.5
 services:
 - postgresql
+before_install:
+- gem install do_postgres -v '0.10.16'
 install:
   - bundle install
 script:
