@@ -54,6 +54,18 @@ feature "questions" do
       click_button "A nerve in the brain"
       expect(page).to have_css("#questionNumber", text: "Question 1 of 10")
     end
+
+
+      scenario "when you get answer 10 question correctly you complete the game" do
+        add_single_question_to_table
+        visit '/'
+        click_button "Start"
+        Game.instance.question_number = 10
+
+        click_button "Athens"
+        expect(page).to have_css("#youWin", text: "You Win!")
+      end
+
   end
 
 
