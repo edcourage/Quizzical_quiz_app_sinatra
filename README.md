@@ -45,4 +45,8 @@ As a player
 So I can keep track of my questions
 I would like to see the question number
 
+As a player
+So the game doesn't go on forever
+I would like to game to finish after 10 questions
+
 ```

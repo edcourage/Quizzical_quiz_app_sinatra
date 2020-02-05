@@ -31,6 +31,15 @@ feature "questions" do
     expect(page).to have_css("#questionNumber", text: "Question 1 of 10")
   end
 
+  # scenario "You're notified that its the first question" do
+  #   srand(2)
+  #   add_two_questions_to_table
+  #   visit '/'
+  #   click_button "Start"
+  #   click_button "Athens"
+  #   expect(page).to have_css("#questionNumber", text: "Question 2 of 10")
+  # end
+
   scenario "notify if there are no more questions" do
     add_single_question_to_table
     visit '/'
