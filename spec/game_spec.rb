@@ -47,6 +47,10 @@ describe Game do
       it "player starts with 3 lives" do
         expect(game.lives_remaining).to eq 3
       end
+
+      it "player can lose lives" do
+        expect{ game.lives_remaining -= 1 }.to change{ game.lives_remaining }.by -1
+      end
     end
   end
 end
