@@ -111,6 +111,26 @@ feature "questions" do
       click_button "Start"
       expect(page).to have_css("#passesRemaining", text: "Passes Remaining: 2")
     end
+    scenario "If I select pass, passes remaining amount will decrease" do
+      add_single_question_to_table
+      visit '/'
+      click_button "Start"
+      add_second_single_question_to_table
+      click_button "Athens"
+      click_button "Pass"
+      expect(page).to have_css("#passesRemaining", text: "Passes Remaining: 1")
+    end
+
+    scenario "If I select pass, I will get a new question but the question number will stay the same" do
+      add_single_question_to_table
+      visit '/'
+      click_button "Start"
+      add_second_single_question_to_table
+      click_button "Athens"
+      click_button "Pass"
+      expect(page).to have_css("#questionNumber", text: "Question 2 of 10")
+    end
+
   end
 
 

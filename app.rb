@@ -23,6 +23,8 @@ class Quizzical < Sinatra::Base
       @result = "Correct!"
       Game.instance.question_number += 1
       redirect '/result' if Game.instance.question_number > 10
+    elsif params[:selected_answer] == "Pass"
+      Game.instance.passes_remaining -= 1
     else
       @result = "Wrong! Should have been #{ params[:correct_answer] }"
       Game.instance.question_number = 1

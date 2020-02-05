@@ -2,7 +2,7 @@
 <div class="questionsInfo">
   <h4 id="questionNumber">Question <%=Game.instance.question_number%> of 10<h4>
     <h4 id="livesRemaining" >Lives Remaining: <%=Game.instance.lives_remaining%></h4>
-    <h4 id="passesRemaining" >Passes Remaining: 2</h4>
+    <h4 id="passesRemaining" >Passes Remaining: <%=Game.instance.passes_remaining%></h4>
     <p id="answerOutcome">* Previous Question Outcome * <br> <%= params[:result] %> </p>
 </div>
 
@@ -15,7 +15,8 @@
     <button type="submit" name="selected_answer" value="<%= @question.answer_2 %>"> <%= @question.answer_2 %> </button>
     <button type="submit" name="selected_answer" value="<%= @question.answer_3 %>"> <%= @question.answer_3 %> </button>
     <button type="submit" name="selected_answer" value="<%= @question.answer_4 %>"> <%= @question.answer_4 %> </button>
-    <input type="hidden" name="correct_answer" value="<%= @question.correct_answer %>">
+    <input type="hidden" name="correct_answer" value="<%= @question.correct_answer %>"><br>
+    <button type="submit" name="selected_answer" value="Pass"> Pass </button>
   </form>
 
 </div>
