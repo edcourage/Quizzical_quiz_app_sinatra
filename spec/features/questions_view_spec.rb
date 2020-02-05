@@ -131,6 +131,17 @@ feature "questions" do
       expect(page).to have_css("#questionNumber", text: "Question 2 of 10")
     end
 
+    scenario "Pass button with not be available once all passes are used up" do
+      add_single_question_to_table
+      visit '/'
+      click_button "Start"
+      add_second_single_question_to_table
+      click_button "Pass"
+      add_third_single_question_to_table
+      click_button "Pass"
+      expect(page).to_not have_css("#passButton")
+    end
+
   end
 
 

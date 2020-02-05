@@ -16,7 +16,9 @@
     <button type="submit" name="selected_answer" value="<%= @question.answer_3 %>"> <%= @question.answer_3 %> </button>
     <button type="submit" name="selected_answer" value="<%= @question.answer_4 %>"> <%= @question.answer_4 %> </button>
     <input type="hidden" name="correct_answer" value="<%= @question.correct_answer %>"><br>
-    <button type="submit" name="selected_answer" value="Pass"> Pass </button>
+    <% if Game.instance.passes_remaining > 0 %>
+    <button id="passButton" type="submit" name="selected_answer" value="Pass"> Pass </button>
+    <% end %>
   </form>
 
 </div>
