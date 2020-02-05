@@ -37,8 +37,9 @@ describe Game do
     end
 
     context "#question_number" do
-      it "adds to question number" do
+      it "adds and resets to question number" do
         expect{ game.question_number += 1 }.to change{ game.question_number }.by 1
+        expect(game.question_number = 1).to eq 1
       end
     end
   end

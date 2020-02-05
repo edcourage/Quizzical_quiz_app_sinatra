@@ -25,6 +25,7 @@ class Quizzical < Sinatra::Base
 
     else
       @result = "Wrong! Should have been #{ params[:correct_answer] }"
+      Game.instance.question_number = 1
     end
     redirect "/questions?result=#{@result}"
   end
