@@ -35,22 +35,27 @@ describe Game do
       allow(question).to receive(:random_question) { ["What is an axolotl?","A species of salamander",["A nerve in the brain","A multi-axled vehicle","A type of mortice lock","A species of salamander"]] }
       expect(game.new_question).to eq ["What is an axolotl?","A species of salamander",["A nerve in the brain","A multi-axled vehicle","A type of mortice lock","A species of salamander"]]
     end
+  end
+  context "#question_number" do
+    it "adds and resets to question number" do
+      expect{ game.question_number += 1 }.to change{ game.question_number }.by 1
+      expect(game.question_number = 1).to eq 1
+    end
+  end
 
-    context "#question_number" do
-      it "adds and resets to question number" do
-        expect{ game.question_number += 1 }.to change{ game.question_number }.by 1
-        expect(game.question_number = 1).to eq 1
-      end
+  context "#lives" do
+    it "player starts with 3 lives" do
+      expect(game.lives_remaining).to eq 3
     end
 
-    context "#lives" do
-      it "player starts with 3 lives" do
-        expect(game.lives_remaining).to eq 3
-      end
+    it "player can lose lives" do
+      expect{ game.lives_remaining -= 1 }.to change{ game.lives_remaining }.by -1
+    end
+  end
 
-      it "player can lose lives" do
-        expect{ game.lives_remaining -= 1 }.to change{ game.lives_remaining }.by -1
-      end
+  context "#passes" do
+    it "player starts with 2 passes" do
+      expect(game.passes_remaining).to eq 2
     end
   end
 end
