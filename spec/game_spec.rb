@@ -4,7 +4,12 @@ describe Game do
   let(:question) { double('question') }
 
   let(:game) {Game.new(question)}
-
+  context "#create" do
+    it "creates a new instance of game" do
+      Game.create
+      expect(Game.instance).to be_instance_of(Game)
+    end
+  end
 
   context "#new_question" do
     it "returns a question" do

@@ -1,7 +1,7 @@
 class Game
   attr_accessor :question_number
   def initialize(question = Question)
-  
+
     @question = question
     @questionTracker = []
     @question_number = 1
@@ -13,6 +13,10 @@ class Game
 
   def self.instance
     @game
+  end
+
+  def self.reset
+    @game = nil
   end
 
   def new_question
