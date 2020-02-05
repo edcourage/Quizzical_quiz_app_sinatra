@@ -11,6 +11,14 @@ describe Game do
     end
   end
 
+  context "#reset" do
+    it "removes instance of game" do
+      Game.create
+      Game.reset
+      expect(Game.instance).to_not be_instance_of(Game)
+    end
+  end
+
   context "#new_question" do
     it "returns a question" do
       allow(question).to receive(:random_question) { ["The Plaka is the oldest quarter of which city?","Athens",["Athens", "Prague","Rome","Vienna"]] }
