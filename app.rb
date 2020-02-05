@@ -8,11 +8,11 @@ class Quizzical < Sinatra::Base
   enable :sessions
 
   get '/' do
-    Game.create
     erb :index
   end
 
   get '/questions' do
+    Game.create if !Game.instance
     @question = Game.instance.new_question
     erb :questions
   end

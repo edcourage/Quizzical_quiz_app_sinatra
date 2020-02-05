@@ -43,7 +43,7 @@ I would like to have a new question every time
 
 As a player
 So I can keep track of my questions
-I would like to see the question number
+I would like to see the question number increase when the answer is correct and reset when incorrect
 
 As a player
 So the game doesn't go on forever
