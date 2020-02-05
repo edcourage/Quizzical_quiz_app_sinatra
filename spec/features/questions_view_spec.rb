@@ -104,5 +104,14 @@ feature "questions" do
     end
   end
 
+  context "#passes" do
+    scenario "I can see remaining passes" do
+      add_single_question_to_table
+      visit '/'
+      click_button "Start"
+      expect(page).to have_css("#passesRemaining", text: "Passes Remaining: 2")
+    end
+  end
+
 
 end
