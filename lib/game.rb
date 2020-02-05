@@ -1,10 +1,11 @@
 class Game
-  attr_accessor :question_number
+  attr_accessor :question_number, :lives_remaining
   def initialize(question = Question)
 
     @question = question
     @questionTracker = []
     @question_number = 1
+    @lives_remaining = 3
   end
 
   def self.create

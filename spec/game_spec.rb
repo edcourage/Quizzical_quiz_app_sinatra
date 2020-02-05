@@ -4,14 +4,14 @@ describe Game do
   let(:question) { double('question') }
 
   let(:game) {Game.new(question)}
-  context "#create" do
+  context "CLASS METHOD #create" do
     it "creates a new instance of game" do
       Game.create
       expect(Game.instance).to be_instance_of(Game)
     end
   end
 
-  context "#reset" do
+  context "CLASS METHOD #reset" do
     it "removes instance of game" do
       Game.create
       Game.reset
@@ -40,6 +40,12 @@ describe Game do
       it "adds and resets to question number" do
         expect{ game.question_number += 1 }.to change{ game.question_number }.by 1
         expect(game.question_number = 1).to eq 1
+      end
+    end
+
+    context "#lives" do
+      it "player starts with 3 lives" do
+        expect(game.lives_remaining).to eq 3
       end
     end
   end
