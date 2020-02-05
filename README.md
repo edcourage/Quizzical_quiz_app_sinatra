@@ -49,4 +49,12 @@ As a player
 So the game doesn't go on forever
 I would like to game to finish after 10 questions
 
+As player
+So the game more of a challenge
+It will be game over if you lose your 3 lives
+
+As player
+Because the Quizzical good is nice
+I will receive 2 passes
+
 ```
