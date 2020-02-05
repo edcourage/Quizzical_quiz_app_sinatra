@@ -57,5 +57,9 @@ describe Game do
     it "player starts with 2 passes" do
       expect(game.passes_remaining).to eq 2
     end
+
+    it "player can lose lives" do
+      expect{ game.passes_remaining -= 1 }.to change{ game.passes_remaining }.by -1
+    end
   end
 end
