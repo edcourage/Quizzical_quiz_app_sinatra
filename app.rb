@@ -20,6 +20,8 @@ class Quizzical < Sinatra::Base
   post '/questions' do
     if params[:selected_answer] == params[:correct_answer]
       @result = "Correct!"
+      Game.instance.question_number += 1
+
     else
       @result = "Wrong! Should have been #{ params[:correct_answer] }"
     end
