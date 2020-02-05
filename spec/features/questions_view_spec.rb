@@ -80,7 +80,15 @@ feature "questions" do
       click_button "Start"
       click_button "Prague"
       expect(page).to have_css("#livesRemaining", text: "Lives Remaining: 2")
+    end
 
+    scenario "If i get a question wrong I lose a life" do
+      add_single_question_to_table
+      visit '/'
+      click_button "Start"
+      Game.instance.lives_remaining = 1
+      click_button "Prague"
+      expect(page).to have_css("#gameOver", text: "Game Over!")
     end
   end
 

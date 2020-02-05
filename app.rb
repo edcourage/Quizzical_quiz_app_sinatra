@@ -27,7 +27,12 @@ class Quizzical < Sinatra::Base
       @result = "Wrong! Should have been #{ params[:correct_answer] }"
       Game.instance.question_number = 1
       Game.instance.lives_remaining -= 1
+      redirect '/game-over' if Game.instance.lives_remaining == 0
     end
     redirect "/questions?result=#{@result}"
+  end
+
+  get '/game-over' do
+    erb :game_over
   end
 end
