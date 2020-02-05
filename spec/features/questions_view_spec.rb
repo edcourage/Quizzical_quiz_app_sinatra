@@ -62,4 +62,12 @@ feature "questions" do
     expect(page).to have_text("You've run out of questions... come on, you think I've got all day to think of new questions. Play something else!")
   end
 
+  scenario "notify if there are no more questions" do
+    add_single_question_to_table
+    visit '/'
+    click_button "Start"
+    expect(page).to have_css("#livesRemaining", text: "Lives Remaining: 3")
+  end
+
+
 end
