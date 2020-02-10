@@ -12,12 +12,12 @@ describe Game do
     end
   end
 
-  context "CLASS METHOD #reset" do
+  context "CLASS METHOD #remove_instance" do
     it "removes instance of game" do
       game_id = 1
       Game.create(game_id)
-      Game.reset(game_id)
-      expect(Game.instance(game_id)).to_not be_instance_of(Game)
+      Game.remove_instance(game_id)
+      expect(Game.instance(game_id)).to eq nil
     end
 
     it "it save multiple instances to hash" do

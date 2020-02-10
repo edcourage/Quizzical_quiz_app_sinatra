@@ -8,12 +8,13 @@ class Quizzical < Sinatra::Base
   enable :sessions
 
   get '/' do
-    Game.reset(session[:game_id])
+    Game.remove_instance(session[:game_id])
     erb :index
   end
 
   get '/questions' do
     session[:game_id] = Game.game_id if session[:game_id].nil?
+    # Game.reset(session[:game_id])
     Game.create(session[:game_id]) if Game.instance(session[:game_id]).nil?
     @game = Game.instance(session[:game_id])
     @question = Game.instance(session[:game_id]).new_question
@@ -38,10 +39,12 @@ class Quizzical < Sinatra::Base
   end
 
   get '/result' do
+    Game.remove_instance(session[:game_id])
     erb :result
   end
 
   get '/game-over' do
+    Game.remove_instance(session[:game_id])
     erb :game_over
   end
 end

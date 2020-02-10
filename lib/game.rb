@@ -24,8 +24,8 @@ class Game
     @game[game_id.to_s]
   end
 
-  def self.reset(game_id)
-    @game[game_id.to_s] = nil
+  def self.remove_instance(game_id)
+    @game.delete(game_id.to_s)
   end
 
   def new_question
