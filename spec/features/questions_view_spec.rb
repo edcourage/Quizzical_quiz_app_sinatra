@@ -61,7 +61,6 @@ feature "questions" do
         visit '/'
         click_button "Start"
         Game.instance(1).question_number = 10
-
         click_button "Athens"
         expect(page).to have_css("#youWin", text: "You Win!")
       end

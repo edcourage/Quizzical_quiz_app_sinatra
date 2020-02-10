@@ -19,6 +19,15 @@ describe Game do
       Game.reset(game_id)
       expect(Game.instance(game_id)).to_not be_instance_of(Game)
     end
+
+    it "it save multiple instances to hash" do
+      first_game_id = 1
+      second_game_id = 2
+      Game.create(first_game_id)
+      expect(Game.instance(first_game_id)).to be_instance_of(Game)
+      Game.create(second_game_id)
+      expect(Game.instance(second_game_id)).to be_instance_of(Game)
+    end
   end
 
   context "#new_question" do
