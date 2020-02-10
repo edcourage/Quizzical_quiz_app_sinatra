@@ -8,28 +8,29 @@ class Quizzical < Sinatra::Base
   enable :sessions
 
   get '/' do
-    Game.reset
+    Game.reset(1)
     erb :index
   end
 
   get '/questions' do
-    Game.create if Game.instance.nil?
-    @question = Game.instance.new_question
+    Game.create(1) if Game.instance(1).nil?
+    @game_id = 1
+    @question = Game.instance(1).new_question
     erb :questions
   end
 
   post '/questions' do
     if params[:selected_answer] == params[:correct_answer]
       @result = "Correct!"
-      Game.instance.question_number += 1
-      redirect '/result' if Game.instance.question_number > 10
+      Game.instance(1).question_number += 1
+      redirect '/result' if Game.instance(1).question_number > 10
     elsif params[:selected_answer] == "Pass"
-      Game.instance.passes_remaining -= 1
+      Game.instance(1).passes_remaining -= 1
     else
       @result = "Wrong! Should have been #{ params[:correct_answer] }"
-      Game.instance.question_number = 1
-      Game.instance.lives_remaining -= 1
-      redirect '/game-over' if Game.instance.lives_remaining == 0
+      Game.instance(1).question_number = 1
+      Game.instance(1).lives_remaining -= 1
+      redirect '/game-over' if Game.instance(1).lives_remaining == 0
     end
     redirect "/questions?result=#{@result}"
   end
