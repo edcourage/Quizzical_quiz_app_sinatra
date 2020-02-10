@@ -57,4 +57,8 @@ As player
 Because the Quizzical good is nice
 I will receive 2 passes
 
+As the Quizzical God
+Because my app is going to be incredibly popular
+I want multiple users to be able to play at the same time
+
 ```

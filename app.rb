@@ -8,37 +8,43 @@ class Quizzical < Sinatra::Base
   enable :sessions
 
   get '/' do
-    Game.reset
+    Game.remove_instance(session[:game_id])
     erb :index
   end
 
   get '/questions' do
-    Game.create if Game.instance.nil?
-    @question = Game.instance.new_question
+    session[:game_id] = Game.game_id if session[:game_id].nil?
+    # Game.reset(session[:game_id])
+    Game.create(session[:game_id]) if Game.instance(session[:game_id]).nil?
+    @game = Game.instance(session[:game_id])
+    @question = Game.instance(session[:game_id]).new_question
     erb :questions
   end
 
   post '/questions' do
+    @game = Game.instance(session[:game_id])
     if params[:selected_answer] == params[:correct_answer]
       @result = "Correct!"
-      Game.instance.question_number += 1
-      redirect '/result' if Game.instance.question_number > 10
+      @game.question_number += 1
+      redirect '/result' if Game.instance(session[:game_id]).question_number > 10
     elsif params[:selected_answer] == "Pass"
-      Game.instance.passes_remaining -= 1
+      @game.passes_remaining -= 1
     else
       @result = "Wrong! Should have been #{ params[:correct_answer] }"
-      Game.instance.question_number = 1
-      Game.instance.lives_remaining -= 1
-      redirect '/game-over' if Game.instance.lives_remaining == 0
+      @game.question_number = 1
+      @game.lives_remaining -= 1
+      redirect '/game-over' if @game.lives_remaining == 0
     end
     redirect "/questions?result=#{@result}"
   end
 
   get '/result' do
+    Game.remove_instance(session[:game_id])
     erb :result
   end
 
   get '/game-over' do
+    Game.remove_instance(session[:game_id])
     erb :game_over
   end
 end

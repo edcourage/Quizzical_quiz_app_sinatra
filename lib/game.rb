@@ -1,5 +1,7 @@
 class Game
   attr_accessor :question_number, :lives_remaining, :passes_remaining
+  @game_id = 1
+  @game = {}
   def initialize(question = Question)
 
     @question = question
@@ -9,16 +11,21 @@ class Game
     @passes_remaining = 2
   end
 
-  def self.create
-    @game = self.new
+  def self.game_id
+    @game_id
   end
 
-  def self.instance
-    @game
+  def self.create(game_id)
+    @game[game_id.to_s] = self.new
+    @game_id += 1
   end
 
-  def self.reset
-    @game = nil
+  def self.instance(game_id)
+    @game[game_id.to_s]
+  end
+
+  def self.remove_instance(game_id)
+    @game.delete(game_id.to_s)
   end
 
   def new_question

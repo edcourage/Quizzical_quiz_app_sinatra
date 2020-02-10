@@ -6,16 +6,27 @@ describe Game do
   let(:game) {Game.new(question)}
   context "CLASS METHOD #create" do
     it "creates a new instance of game" do
-      Game.create
-      expect(Game.instance).to be_instance_of(Game)
+      game_id = 1
+      Game.create(game_id)
+      expect(Game.instance(game_id)).to be_instance_of(Game)
     end
   end
 
-  context "CLASS METHOD #reset" do
+  context "CLASS METHOD #remove_instance" do
     it "removes instance of game" do
-      Game.create
-      Game.reset
-      expect(Game.instance).to_not be_instance_of(Game)
+      game_id = 1
+      Game.create(game_id)
+      Game.remove_instance(game_id)
+      expect(Game.instance(game_id)).to eq nil
+    end
+
+    it "it save multiple instances to hash" do
+      first_game_id = 1
+      second_game_id = 2
+      Game.create(first_game_id)
+      expect(Game.instance(first_game_id)).to be_instance_of(Game)
+      Game.create(second_game_id)
+      expect(Game.instance(second_game_id)).to be_instance_of(Game)
     end
   end
 

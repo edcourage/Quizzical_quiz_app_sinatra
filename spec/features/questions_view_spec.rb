@@ -60,8 +60,8 @@ feature "questions" do
         add_single_question_to_table
         visit '/'
         click_button "Start"
-        Game.instance.question_number = 10
-
+        game_id = Game.game_id - 1
+        Game.instance(game_id).question_number = 10
         click_button "Athens"
         expect(page).to have_css("#youWin", text: "You Win!")
       end
@@ -98,7 +98,8 @@ feature "questions" do
       add_single_question_to_table
       visit '/'
       click_button "Start"
-      Game.instance.lives_remaining = 1
+      game_id = Game.game_id - 1
+      Game.instance(game_id).lives_remaining = 1
       click_button "Prague"
       expect(page).to have_css("#gameOver", text: "Game Over!")
     end
