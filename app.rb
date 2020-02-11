@@ -23,6 +23,7 @@ class Quizzical < Sinatra::Base
 
   post '/questions' do
     @game = Game.instance(session[:game_id])
+    p params
     if params[:selected_answer] == params[:correct_answer]
       @result = "Correct!"
       @game.question_number += 1
