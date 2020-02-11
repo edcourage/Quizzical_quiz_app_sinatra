@@ -16,7 +16,6 @@ function PreSubmit(selectedAnswer, correctAnswer){
   correctAnswerInput.setAttribute("value", correctAnswer)
   form.appendChild(selectedInput)
   form.appendChild(correctAnswerInput)
-  console.log(document.getElementById("questionForm"))
   var func=function(){form.submit();}
   setTimeout(func,1000);
 }
