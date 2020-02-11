@@ -66,7 +66,7 @@ button:hover {
 
 }
 
-.possibleAnswers {
+#possibleAnswers {
   margin: 15px;
   padding: 15px;
   text-align: center;

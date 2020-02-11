@@ -4,7 +4,6 @@
   <h4 id="questionNumber">Question <%=@game.question_number%> of 10<h4>
     <h4 id="livesRemaining" >Lives Remaining: <%=@game.lives_remaining%></h4>
     <h4 id="passesRemaining" >Passes Remaining: <%=@game.passes_remaining%></h4>
-    <p id="answerOutcome">* Previous Question Outcome * <br> <%= params[:result] %> </p>
 </div>
 
 <%if @question != nil %>
@@ -15,20 +14,13 @@
   <button id="<%= @question.answer_2 %>" type="button" onclick="PreSubmit('<%= @question.answer_2 %>','<%= @question.correct_answer %>')"> <%= @question.answer_2 %> </button>
   <button id="<%= @question.answer_3 %>" type="button" onclick="PreSubmit('<%= @question.answer_3 %>','<%= @question.correct_answer %>')"> <%= @question.answer_3 %> </button>
   <button id="<%= @question.answer_4 %>" type="button" onclick="PreSubmit('<%= @question.answer_4 %>','<%= @question.correct_answer %>')"> <%= @question.answer_4 %> </button>
-
   <% if @game.passes_remaining > 0 %>
   <button id="passButton" type="button" onclick="PreSubmit('Pass','<%= @question.correct_answer %>')"> Pass </button>
   <% end %>
+</div>
 
   <form action="/questions" method="post" id="questionForm" onsubmit="return PreSubmit()">
     </form>
-
-
-
- <%= @question.correct_answer %>
-
-
-</div>
 <%  else %>
   <h3 id=question >You've run out of questions... come on, you think I've got all day to think of new questions. Play something else!</h3>
 <%  end %>

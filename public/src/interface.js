@@ -6,6 +6,6 @@ $(document).ready(function(){
    $("#howToPlayIndexButton").hide()
  });
 
- document.getElementById("questionForm")
+
 
 });
