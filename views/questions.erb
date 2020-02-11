@@ -7,20 +7,22 @@
 </div>
 
 <%if @question != nil %>
+<div id="questionArea">
 
 <h3 id=question > <%=@question.question%></h3>
 <div class="possibleAnswers">
   <button id="<%= @question.answer_1 %>" type="button" onclick="PreSubmit('<%= @question.answer_1 %>','<%= @question.correct_answer %>')"> <%= @question.answer_1 %> </button>
   <button id="<%= @question.answer_2 %>" type="button" onclick="PreSubmit('<%= @question.answer_2 %>','<%= @question.correct_answer %>')"> <%= @question.answer_2 %> </button>
   <button id="<%= @question.answer_3 %>" type="button" onclick="PreSubmit('<%= @question.answer_3 %>','<%= @question.correct_answer %>')"> <%= @question.answer_3 %> </button>
-  <button id="<%= @question.answer_4 %>" type="button" onclick="PreSubmit('<%= @question.answer_4 %>','<%= @question.correct_answer %>')"> <%= @question.answer_4 %> </button>
+  <button id="<%= @question.answer_4 %>" type="button" onclick="PreSubmit('<%= @question.answer_4 %>','<%= @question.correct_answer %>')"> <%= @question.answer_4 %> </button><br>
   <% if @game.passes_remaining > 0 %>
   <button id="passButton" type="button" onclick="PreSubmit('Pass','<%= @question.correct_answer %>')"> Pass </button>
   <% end %>
 </div>
+</div>
 
-  <form action="/questions" method="post" id="questionForm" onsubmit="return PreSubmit()">
-    </form>
 <%  else %>
   <h3 id=question >You've run out of questions... come on, you think I've got all day to think of new questions. Play something else!</h3>
 <%  end %>
+<form action="/questions" method="post" id="questionForm" onsubmit="return PreSubmit()">
+  </form>

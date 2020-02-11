@@ -3,6 +3,7 @@ font-family: "Welcome";
 src: url("fonts/Welcome 2019.ttf");
 }
 
+
 body {
   background-color: #1E90FF;
 }
@@ -37,6 +38,15 @@ button:hover {
   text-shadow: 3px 2px red;
 }
 
+#homeLink {
+  text-align: right;
+  font-family: Welcome;
+  text-decoration: none;
+  font-size: 25px;
+  color: Yellow;
+  text-shadow: 1.5px 1px red;
+}
+
 .startHowToPlayOption {
   text-align: center;
 }
@@ -66,7 +76,7 @@ button:hover {
 
 }
 
-#possibleAnswers {
+.possibleAnswers {
   margin: 15px;
   padding: 15px;
   text-align: center;
