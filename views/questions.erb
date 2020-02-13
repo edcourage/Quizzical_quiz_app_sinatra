@@ -3,9 +3,14 @@
 
 <script src="src/questionPageDom.js"></script>
 <div class="questionsInfo">
-  <h4 id="questionNumber">Question <%=@game.question_number%> of 10</h4>
+  <div id="questionsInfoLeft">
     <h4 id="livesRemaining" >Lives Remaining: <%=@game.lives_remaining%></h4>
     <h4 id="passesRemaining" >Passes Remaining: <%=@game.passes_remaining%></h4>
+  </div>
+  <div id="questionsInfoRight">
+    <h4 id="questionNumber">Question <%=@game.question_number%> of 10</h4>
+  </div>
+
   </div>
 
   <%if @question != nil %>

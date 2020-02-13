@@ -11,10 +11,10 @@ feature "questions" do
       add_single_question_to_table
       visit '/'
       click_button "Start"
-      expect(page).to have_css(".possibleAnswers", text: "Athens")
-      expect(page).to have_css(".possibleAnswers", text: "Prague")
-      expect(page).to have_css(".possibleAnswers", text: "Rome")
-      expect(page).to have_css(".possibleAnswers", text: "Vienna")
+      expect(page).to have_css("#possibleAnswers", text: "Athens")
+      expect(page).to have_css("#possibleAnswers", text: "Prague")
+      expect(page).to have_css("#possibleAnswers", text: "Rome")
+      expect(page).to have_css("#possibleAnswers", text: "Vienna")
     end
   end
 
