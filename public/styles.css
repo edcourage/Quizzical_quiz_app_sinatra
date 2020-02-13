@@ -32,15 +32,14 @@ src: url("fonts/Welcome 2019.ttf");
     font-size: 60px;
     margin: 4px 2px;
     cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     text-align: center;
 
   }
 
-  button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  }
+
 
 
 
@@ -134,7 +133,7 @@ src: url("fonts/Welcome 2019.ttf");
     top: 60%;
     text-align: center;
     font-family: Welcome;
-    font-size: 200px;
+    font-size: 220px;
     color: Yellow;
     text-shadow: 3px 2px red;
   }
@@ -152,11 +151,26 @@ src: url("fonts/Welcome 2019.ttf");
 
    text-align: center;
  }
+
+ #howToPlayIndexButton {
+   position: relative;
+  top: 40px;
+ }
   .indexButton {
 
     height: 170px;
     width: 60%;
 
+  }
+
+  #howToPlayInstructions {
+    position: relative;
+   top: 40px;
+    height: 20%;
+    font-size: 50px;
+    color: Yellow;
+    text-shadow: 3px 2px red;
+    text-align: center;
   }
 
   #questionsPage {
