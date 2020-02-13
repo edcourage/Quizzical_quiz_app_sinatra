@@ -30,12 +30,11 @@ class Quizzical < Sinatra::Base
     elsif params[:selected_answer] == "Pass"
       @game.passes_remaining -= 1
     else
-      @result = "Wrong! Should have been #{ params[:correct_answer] }"
       @game.question_number = 1
       @game.lives_remaining -= 1
       redirect '/game-over' if @game.lives_remaining == 0
     end
-    redirect "/questions?result=#{@result}"
+    redirect "/questions"
   end
 
   get '/result' do
