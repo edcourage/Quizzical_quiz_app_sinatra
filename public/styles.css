@@ -45,46 +45,6 @@ src: url("fonts/CabinSketch-Regular.otf");
   }
 
 
-
-
-
-  .anwserSelectionButton {
-    width: 80%
-  }
-
-
-
-
-
-
-  #question {
-    font-family: CabinSketch;
-    text-align: center;
-    height:100%;
-    color: Yellow;
-    font-size: 70px;
-    text-shadow: 2px 1px red;
-  }
-
-  #answerOutcome {
-    text-align: center;
-    font-family: CabinSketch;
-    color: Yellow;
-    font-size: 20px;
-    text-shadow: 1px 0.5px red;
-  }
-
-
-  .howToPlay {
-    text-align: center;
-    font-family: 'Abel', sans-serif;
-    color: Yellow;
-    font-size: 20px;
-    text-shadow: 1px 0.5px red;
-
-   bottom: 0px;
-  }
-
   .questionsInfo {
     height: 10%
   }
@@ -188,11 +148,43 @@ font-family: CabinSketch;
 
 
   #questionArea {
-    /* height: 100% */
+    height: 80%
   }
 
   #questionTextArea {
-    /* height: 20% */
+    height: 30%
+
+  }
+  #possibleAnswers {
+    height: 70%;
+    text-align: center;
+  }
+
+  .anwserSelectionButton {
+    width: 80%;
+    height: 20%;
+
+
+  }
+
+  #passButton {
+    background-color: yellow;
+  }
+
+
+
+
+
+
+  #question {
+    font-family: CabinSketch;
+    text-align: center;
+    height:100%;
+    color: Yellow;
+    font-size: 6.5vw;
+    text-shadow: 2px 1px red;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
 }
