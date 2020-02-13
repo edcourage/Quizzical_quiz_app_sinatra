@@ -6,6 +6,8 @@ services:
 addons:
   postgresql: "11.5"
 before_install:
+  - sudo apt-get install postgresql
+  - sudo apt-get install libpq-dev
   - sudo apt-get install postgresql-server-dev-10
   - gem install do_postgres
 install:
