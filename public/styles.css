@@ -48,26 +48,10 @@ src: url("fonts/Welcome 2019.ttf");
     width: 80%
   }
 
-  #title {
-    text-align: center;
-    font-family: Welcome;
-    font-size: 150px;
-    color: Yellow;
-    text-shadow: 3px 2px red;
-  }
 
 
 
-  .startHowToPlayOption {
-     height: 200px;
-    text-align: center;
 
-      bottom: 0px;
-  }
-  .startHowToPlayButton {
-    height: 200px;
-    width: 80%
-  }
 
   #question {
     text-align: center;
@@ -118,19 +102,62 @@ src: url("fonts/Welcome 2019.ttf");
   }
 
   #homeLink {
-
-    font-family: Welcome;
     text-decoration: none;
-    font-size: 120px;
     color: Yellow;
-    text-shadow: 1.5px 1px red;
+    height: 100%;
+    text-shadow: 3px 2px red;
   }
 
   #homeLinkContainer {
-    margin-left: 15px
+    margin-left: 15px;
+    height: 100%;
+    font-size: 120px;
+    font-family: Welcome;
+    text-decoration: none;
+
+    color: Yellow;
+
+  }
+
+  #indexPage {
+    height: 93.5%;
+  }
+
+#titleContainer {
+  height: 45%;
+}
+
+
+  #title {
+    height: 30%;
+    position: relative;
+    top: 60%;
+    text-align: center;
+    font-family: Welcome;
+    font-size: 200px;
+    color: Yellow;
+    text-shadow: 3px 2px red;
   }
 
 
+  #startButtonsContainer {
+
+    height: 40%;
+
+  }
+
+ #startFormContainer {
+   height: 100%;
+
+
+   text-align: center;
+ }
+  .indexButton {
+
+    height: 170px;
+    width: 60%;
+
+  }
 
   #questionsPage {
     height: 93.5%;

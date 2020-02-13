@@ -1,13 +1,20 @@
-<div class="index">
+<div id="indexPage">
+
+<div id="titleContainer">
+    <h1 id='title'>Quizzical</h1>
+</div>
 
 
-<h1 id='title'>Quizzical</h1>
-<div class="startHowToPlayOption">
 
-  <form action="/questions" >
-    <button type="submit" class="startHowToPlayButton" id='indexButton'>Start</button>
+
+<div id="startButtonsContainer">
+
+
+  <form id="startFormContainer" action="/questions" >
+    <button type="submit" class="indexButton" >Start</button>
+    <button type="button" id="howToPlayIndexButton" class="indexButton" >How To Play</button>
   </form>
-  <button type="button" class="startHowToPlayButton" id='howToPlayIndexButton'>How To Play</button>
+
   <p id='howToPlayInstructions'></p>
 
 </div>
