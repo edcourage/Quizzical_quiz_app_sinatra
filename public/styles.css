@@ -1,11 +1,13 @@
 @font-face {
   font-family: "Welcome";
-  src: url("fonts/Welcome 2019.ttf");
+  src: url("fonts/Welcome.ttf");
 }
+
 @font-face {
   font-family: "CabinSketch";
   src: url("fonts/CabinSketch-Regular.otf");
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -79,7 +81,7 @@
     margin-left: 15px;
     height: 100%;
     font-size: 10vw;
-    font-family: Welcome;
+    font-family: "CabinSketch";
     text-decoration: none;
 
     color: Yellow;
@@ -100,11 +102,11 @@
     position: relative;
     top: 60%;
     text-align: center;
-    font-family: Welcome;
+  font-family: "CabinSketch";
     font-size: 23vw;
     font-size: 11vh;
     color: Yellow;
-    text-shadow: 12px 8px 8px red;
+    text-shadow: 15px 10px 15px red;
   }
 
 
@@ -161,7 +163,7 @@
   #questionNumber {
     top: 10px;
     position: relative;
-    font-size: 5vw;
+    font-size: 4vw;
     color: Yellow;
     text-shadow: 3px 2px red;
     text-align: right;
@@ -171,7 +173,7 @@
   #livesRemaining {
     top: 10px;
     position: relative;
-    font-size: 5vw;
+    font-size: 4vw;
     color: Yellow;
     text-shadow: 3px 2px red;
     text-align: left;
@@ -180,7 +182,7 @@
   #passesRemaining {
     top: 20px;
     position: relative;
-    font-size: 5vw;
+    font-size: 4vw;
     color: Yellow;
     text-shadow: 3px 2px red;
     text-align: left;
