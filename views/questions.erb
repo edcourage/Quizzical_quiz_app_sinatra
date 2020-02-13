@@ -1,26 +1,38 @@
+<div id="questionsPage">
+
 
 <script src="src/questionPageDom.js"></script>
 <div class="questionsInfo">
-  <h4 id="questionNumber">Question <%=@game.question_number%> of 10<h4>
+  <div id="questionsInfoLeft">
     <h4 id="livesRemaining" >Lives Remaining: <%=@game.lives_remaining%></h4>
     <h4 id="passesRemaining" >Passes Remaining: <%=@game.passes_remaining%></h4>
-</div>
+  </div>
+  <div id="questionsInfoRight">
+    <h4 id="questionNumber">Question <%=@game.question_number%> of 10</h4>
+  </div>
 
-<%if @question != nil %>
+  </div>
 
-<h3 id=question > <%=@question.question%></h3>
-<div class="possibleAnswers">
-  <button id="<%= @question.answer_1 %>" type="button" onclick="PreSubmit('<%= @question.answer_1 %>','<%= @question.correct_answer %>')"> <%= @question.answer_1 %> </button>
-  <button id="<%= @question.answer_2 %>" type="button" onclick="PreSubmit('<%= @question.answer_2 %>','<%= @question.correct_answer %>')"> <%= @question.answer_2 %> </button>
-  <button id="<%= @question.answer_3 %>" type="button" onclick="PreSubmit('<%= @question.answer_3 %>','<%= @question.correct_answer %>')"> <%= @question.answer_3 %> </button>
-  <button id="<%= @question.answer_4 %>" type="button" onclick="PreSubmit('<%= @question.answer_4 %>','<%= @question.correct_answer %>')"> <%= @question.answer_4 %> </button>
-  <% if @game.passes_remaining > 0 %>
-  <button id="passButton" type="button" onclick="PreSubmit('Pass','<%= @question.correct_answer %>')"> Pass </button>
-  <% end %>
-</div>
+  <%if @question != nil %>
+  <div id="questionArea">
+    <div id=questionTextArea>
+      <h3 id=question > <%=@question.question%></h3>
+    </div>
 
-  <form action="/questions" method="post" id="questionForm" onsubmit="return PreSubmit()">
-    </form>
-<%  else %>
+    <div id="possibleAnswers">
+      <button id="<%= @question.answer_1 %>" class='anwserSelectionButton'type="button" onclick="PreSubmit('<%= @question.answer_1 %>','<%= @question.correct_answer %>')"> <%= @question.answer_1 %> </button>
+      <button id="<%= @question.answer_2 %>" class='anwserSelectionButton'type="button" onclick="PreSubmit('<%= @question.answer_2 %>','<%= @question.correct_answer %>')"> <%= @question.answer_2 %> </button>
+      <button id="<%= @question.answer_3 %>" class='anwserSelectionButton'type="button" onclick="PreSubmit('<%= @question.answer_3 %>','<%= @question.correct_answer %>')"> <%= @question.answer_3 %> </button>
+      <button id="<%= @question.answer_4 %>" class='anwserSelectionButton'type="button" onclick="PreSubmit('<%= @question.answer_4 %>','<%= @question.correct_answer %>')"> <%= @question.answer_4 %> </button>
+      <% if @game.passes_remaining > 0 %>
+      <button id="passButton" type="button" class='anwserSelectionButton'onclick="PreSubmit('Pass','<%= @question.correct_answer %>')"> Pass </button>
+      <% end %>
+      <form action="/questions" method="post" id="questionForm" onsubmit="return PreSubmit()">
+      </form>
+    </div>
+  </div>
+
+  <%  else %>
   <h3 id=question >You've run out of questions... come on, you think I've got all day to think of new questions. Play something else!</h3>
-<%  end %>
+  <%  end %>
+</div>

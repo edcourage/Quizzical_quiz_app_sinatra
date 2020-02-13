@@ -1,74 +1,360 @@
 @font-face {
-font-family: "Welcome";
-src: url("fonts/Welcome 2019.ttf");
+  font-family: "Welcome";
+  src: url("fonts/Welcome 2019.ttf");
+}
+@font-face {
+  font-family: "CabinSketch";
+  src: url("fonts/CabinSketch-Regular.otf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-  background-color: #1E90FF;
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 1000px) {
+  html {
+    height: 100%;
+  }
+  body {
+    background-color: #1E90FF;
+    height: 100%;
+
+  }
+
+  button {
+    background-color: white; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    border-radius: 12px;
+
+    text-decoration: none;
+    display: inline-block;
+    font-size: 60px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-align: center;
+
+  }
+
+
+  .questionsInfo {
+    height: 10%
+  }
+
+  .possibleAnswers {
+    font-family: CabinSketch;
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+    height: 10%
+
+  }
+  #quizzicalAppContainer {
+    height: 100%
+  }
+  .header {
+    height: 6.5%;
+  }
+  .nav {
+    height: 100%
+  }
+
+  #homeLink {
+    text-decoration: none;
+    color: Yellow;
+    height: 100%;
+    text-shadow: 3px 2px red;
+    text-shadow: 6px 4px 8px red;
+  }
+
+  #homeLinkContainer {
+    margin-left: 15px;
+    height: 100%;
+    font-size: 10vw;
+    font-family: Welcome;
+    text-decoration: none;
+
+    color: Yellow;
+
+  }
+
+  #indexPage {
+    height: 93.5%;
+  }
+
+  #titleContainer {
+    height: 45%;
+  }
+
+
+  #title {
+    height: 30%;
+    position: relative;
+    top: 60%;
+    text-align: center;
+    font-family: Welcome;
+    font-size: 23vw;
+    font-size: 11vh;
+    color: Yellow;
+    text-shadow: 12px 8px 8px red;
+  }
+
+
+  #startButtonsContainer {
+
+    height: 40%;
+
+  }
+
+  #startFormContainer {
+    height: 100%;
+
+
+    text-align: center;
+  }
+
+  #howToPlayIndexButton {
+    position: relative;
+    top: 40px;
+  }
+  .indexButton {
+    font-family: CabinSketch;
+    height: 170px;
+    width: 60%;
+
+  }
+
+  #howToPlayInstructions {
+    font-family: CabinSketch;
+    position: relative;
+    top: 40px;
+    height: 20%;
+    font-size: 50px;
+    color: Yellow;
+    text-shadow: 3px 2px red;
+    text-align: center;
+  }
+
+  #questionsPage {
+    font-family: CabinSketch;
+    height: 93.5%;
+  }
+  #questionsInfoLeft {
+    height: 100%;
+    width: 50%;
+    float: left;
+  }
+
+  #questionsInfoRight {
+    height: 100%;
+    width: 50%;
+    float: right;
+  }
+  #questionNumber {
+    top: 10px;
+    position: relative;
+    font-size: 5vw;
+    color: Yellow;
+    text-shadow: 3px 2px red;
+    text-align: right;
+    margin-right: 20px
+  }
+
+  #livesRemaining {
+    top: 10px;
+    position: relative;
+    font-size: 5vw;
+    color: Yellow;
+    text-shadow: 3px 2px red;
+    text-align: left;
+    margin-left: 20px
+  }
+  #passesRemaining {
+    top: 20px;
+    position: relative;
+    font-size: 5vw;
+    color: Yellow;
+    text-shadow: 3px 2px red;
+    text-align: left;
+    margin-left: 20px
+  }
+
+  #questionArea {
+    height: 90%
+  }
+
+  #questionTextArea {
+    height: 30%
+
+  }
+  #possibleAnswers {
+    height: 65%;
+    text-align: center;
+  }
+
+  .anwserSelectionButton {
+    font-family: CabinSketch;
+    width: 80%;
+    height: 19%;
+
+
+  }
+
+  #passButton {
+    background-color: yellow;
+  }
+
+
+
+
+
+
+  #question {
+    font-family: CabinSketch;
+    text-align: center;
+    height:100%;
+    color: Yellow;
+    font-size: 7.2vw;
+    font-size: 3.2vh;
+    text-shadow: 2px 1px red;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+
+
+
+  #gameOverPage {
+    font-family: CabinSketch;
+    height: 93.5%;
+    text-align: center;
+    font-size: 6vw;
+    font-size: 3vh;
+    color: Yellow;
+    text-shadow: 3px 2px red;
+  }
+
+  #gameOver {
+    position: relative;
+    top: 43%
+  }
+
+  #youWinPage {
+    font-family: CabinSketch;
+    height: 93.5%;
+    text-align: center;
+    font-size: 6vw;
+    font-size: 3vh;
+    color: Yellow;
+    text-shadow: 3px 2px red;
+  }
+
+  #youWin {
+    position: relative;
+    top: 43%
+  }
+
 }
 
-button {
-  background-color: white; /* Green */
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  font-family: 'Abel', sans-serif;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  text-align: center;
 
-}
 
-button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
 
-#title {
-  text-align: center;
-  font-family: Welcome;
-  font-size: 60px;
-  color: Yellow;
-  text-shadow: 3px 2px red;
-}
 
-.startHowToPlayOption {
-  text-align: center;
-}
 
-#question {
-  text-align: center;
-  font-family: 'Abel', sans-serif;
-  color: Yellow;
-  font-size: 30px;
-  text-shadow: 2px 1px red;
-}
 
-#answerOutcome {
-  text-align: center;
-  font-family: 'Abel', sans-serif;
-  color: Yellow;
-  font-size: 20px;
-  text-shadow: 1px 0.5px red;
-}
 
-.howToPlay {
-  text-align: center;
-  font-family: 'Abel', sans-serif;
-  color: Yellow;
-  font-size: 20px;
-  text-shadow: 1px 0.5px red;
 
-}
 
-#possibleAnswers {
-  margin: 15px;
-  padding: 15px;
-  text-align: center;
 
+
+/* Desktop Styles */
+@media only screen and (min-width: 1000px) {
+  body {
+    background-color: #1E90FF;
+    margin: 0; padding: 0; height: 100%; width: 100%;
+  }
+
+  button {
+    background-color: white; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    border-radius: 12px;
+
+    text-decoration: none;
+    display: inline-block;
+    font-size: 60px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-align: center;
+
+  }
+
+  button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  #title {
+    text-align: center;
+    font-family: Welcome;
+    font-size: 150px;
+    color: Yellow;
+    text-shadow: 3px 2px red;
+  }
+
+  #homeLink {
+    text-align: right;
+    font-family: Welcome;
+    text-decoration: none;
+    font-size: 120px;
+    color: Yellow;
+    text-shadow: 1.5px 1px red;
+  }
+
+  .startHowToPlayOption {
+    height: 200px;
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+  }
+  .startHowToPlayButton {
+    height: 200px;
+    width: 80%
+  }
+
+  #question {
+    text-align: center;
+
+    color: Yellow;
+    font-size: 80px;
+    text-shadow: 2px 1px red;
+  }
+
+
+  .howToPlay {
+    text-align: center;
+    font-family: 'Abel', sans-serif;
+    color: Yellow;
+    font-size: 20px;
+    text-shadow: 1px 0.5px red;
+    position: relative;
+    bottom: 0px;
+  }
+
+  .possibleAnswers {
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+
+  }
 }
