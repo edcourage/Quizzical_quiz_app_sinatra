@@ -7,6 +7,10 @@ addons:
   firefox: latest
 before_install:
   - sudo apt-get install postgresql-server-dev-all
+   - wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
+  - mkdir geckodriver
+  - tar -xzf geckodriver*.tar.gz -C geckodriver
+  - export PATH=$PATH:$PWD/geckodriver
 install:
   - bundle install
 before_script:
