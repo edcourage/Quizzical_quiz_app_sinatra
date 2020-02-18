@@ -18,14 +18,6 @@ feature "questions" do
     end
   end
 
-  # scenario "If I select the correct answers I am notified" do
-  #   add_single_question_to_table
-  #   visit '/'
-  #   click_button "Start"
-  #   click_button "Athens"
-  #   expect(page).to have_css("#answerOutcome", text: "Correct!")
-  # end
-
   context "#question number" do
     scenario "You're notified that its the first question" do
       add_single_question_to_table
@@ -69,7 +61,7 @@ feature "questions" do
   end
 
 
-
+  #
   # scenario "notify if there are no more questions" do
   #   add_single_question_to_table
   #   visit '/'
