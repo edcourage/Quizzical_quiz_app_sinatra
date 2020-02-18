@@ -6,6 +6,7 @@ services:
 before_install:
   - gem install -v 2.1.4 bundler
   - sudo apt-get install postgresql-9.6 libpq-dev
+  - sudo apt-get install postgresql-server-dev-9.6
   - gem install do_postgres
 install:
   - bundle install
