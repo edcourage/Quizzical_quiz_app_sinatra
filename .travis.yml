@@ -6,6 +6,13 @@ services:
 addons:
   firefox: latest
 before_install:
+  - sudo apt-get update
+  - sudo apt-get install dbus-x11
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+  - tar -xzf geckodriver-v0.26.0-linux64.tar.gz
+  - sudo cp geckodriver /usr/bin
   - sudo apt-get install postgresql-server-dev-all
 install:
   - bundle install
