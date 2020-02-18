@@ -3,6 +3,8 @@ rvm:
    - 2.6.3
 services:
   - postgresql
+addons:
+  firefox: latest
 before_install:
   - sudo apt-get install postgresql-server-dev-all
 install:
