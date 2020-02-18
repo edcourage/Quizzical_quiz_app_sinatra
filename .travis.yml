@@ -8,8 +8,6 @@ addons:
 before_install:
   - sudo apt-get install postgresql-server-dev-all
 install:
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.20.1/geckodriver-v0.20.1-linux64.tar.gz
-  - tar -xzf geckodriver-v0.20.0-linux64.tar.gz -C bin
   - bundle install
 before_script:
   - psql -c 'create database quizzical_test;' -U postgres
