@@ -7,7 +7,7 @@ before_install:
 
 
   - sudo apt-get install postgresql-server-dev-all
-  - gem install do_postgres
+
 install:
   - bundle install
 before_script:
