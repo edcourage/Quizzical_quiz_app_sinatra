@@ -15,7 +15,7 @@ feature 'Index page' do
   end
 
   scenario 'Expect page to diplay instuction after how to play is pressed' do
-    Capybara.current_driver = :selenium_chrome 
+    Capybara.current_driver = :selenium
     visit '/'
 
     click_button "How To Play"
