@@ -1,17 +1,14 @@
 language: ruby
 rvm:
- - 2.6.3
+   - 2.6.3
 services:
-- postgresql
-addons:
-  postgresql: '11.5'
-  apt:
-    packages:
-      - postgresql-server-dev-all
+  - postgresql
+before_install:
+  - sudo apt-get install postgresql-server-dev-all
 install:
   - bundle install
 before_script:
-   - psql -c 'create database quizzical_test;' -U postgres
+  - psql -c 'create database quizzical_test;' -U postgres
 script:
-- bundle exec rake db_populate
-- bundle exec rspec
+  - bundle exec rake db_populate
+  - bundle exec rspec
