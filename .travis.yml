@@ -7,7 +7,7 @@ addons:
   postgresql: '11.5'
   apt:
     packages:
-      - postgresql-server-dev-11.5
+      - postgresql-server-dev-all
 install:
   - bundle install
 before_script:
