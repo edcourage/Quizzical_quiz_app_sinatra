@@ -1,6 +1,7 @@
 feature "questions" do
   context "#question and possible answers" do
     scenario "can see the question title" do
+
       add_single_question_to_table
       visit '/'
       click_button "Start"
@@ -15,6 +16,7 @@ feature "questions" do
       expect(page).to have_css("#possibleAnswers", text: "Prague")
       expect(page).to have_css("#possibleAnswers", text: "Rome")
       expect(page).to have_css("#possibleAnswers", text: "Vienna")
+
     end
   end
 
@@ -26,37 +28,37 @@ feature "questions" do
       expect(page).to have_css("#questionNumber", text: "Question 1 of 10")
     end
 
-    # scenario "when you answer correct the question number increases" do
-    #   add_single_question_to_table
-    #   visit '/'
-    #   click_button "Start"
-    #   add_second_single_question_to_table
-    #   click_button "Athens"
-    #   click_button "A species of salamander"
-    #   expect(page).to have_css("#questionNumber", text: "Question 3 of 10")
-    # end
-    #
-    # scenario "when your answer incorrect the question number resets to 1" do
-    #   add_single_question_to_table
-    #   visit '/'
-    #   click_button "Start"
-    #   add_second_single_question_to_table
-    #   click_button "Athens"
-    #   expect(page).to have_css("#questionNumber", text: "Question 2 of 10")
-    #   click_button "A nerve in the brain"
-    #   expect(page).to have_css("#questionNumber", text: "Question 1 of 10")
-    # end
-    #
-    #
-    #   scenario "when you get answer 10 question correctly you complete the game" do
-    #     add_single_question_to_table
-    #     visit '/'
-    #     click_button "Start"
-    #     game_id = Game.game_id - 1
-    #     Game.instance(game_id).question_number = 10
-    #     click_button "Athens"
-    #     expect(page).to have_css("#youWin", text: "You Win!")
-    #   end
+    scenario "when you answer correct the question number increases" do
+      add_single_question_to_table
+      visit '/'
+      click_button "Start"
+      add_second_single_question_to_table
+      click_button "Athens"
+      click_button "A species of salamander"
+      expect(page).to have_css("#questionNumber", text: "Question 3 of 10")
+    end
+
+    scenario "when your answer incorrect the question number resets to 1" do
+      add_single_question_to_table
+      visit '/'
+      click_button "Start"
+      add_second_single_question_to_table
+      click_button "Athens"
+      expect(page).to have_css("#questionNumber", text: "Question 2 of 10")
+      click_button "A nerve in the brain"
+      expect(page).to have_css("#questionNumber", text: "Question 1 of 10")
+    end
+
+
+      scenario "when you get answer 10 question correctly you complete the game" do
+        add_single_question_to_table
+        visit '/'
+        click_button "Start"
+        game_id = Game.game_id - 1
+        Game.instance(game_id).question_number = 10
+        click_button "Athens"
+        expect(page).to have_css("#youWin", text: "You Win!")
+      end
 
   end
 
