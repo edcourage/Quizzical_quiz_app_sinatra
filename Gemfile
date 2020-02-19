@@ -19,9 +19,7 @@ group :test do
   gem 'rspec'
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
   gem 'selenium'
-  gem 'puma'
   gem 'database_cleaner'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
