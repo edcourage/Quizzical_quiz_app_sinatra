@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Welcome";
-  src: url("fonts/Welcome.ttf");
+  src: url("fonts/Welcome 2019.otf");
 }
 
 @font-face {
@@ -80,8 +80,8 @@
   #homeLinkContainer {
     margin-left: 15px;
     height: 100%;
-    font-size: 10vw;
-    font-family: "CabinSketch";
+    font-size: 5vh;
+    font-family: Welcome;
     text-decoration: none;
 
     color: Yellow;
@@ -102,8 +102,7 @@
     position: relative;
     top: 60%;
     text-align: center;
-  font-family: "CabinSketch";
-    font-size: 23vw;
+    font-family: Welcome;
     font-size: 11vh;
     color: Yellow;
     text-shadow: 15px 10px 15px red;
@@ -163,7 +162,8 @@
   #questionNumber {
     top: 10px;
     position: relative;
-    font-size: 4vw;
+    font-size: 2vh;
+
     color: Yellow;
     text-shadow: 3px 2px red;
     text-align: right;
@@ -173,7 +173,8 @@
   #livesRemaining {
     top: 10px;
     position: relative;
-    font-size: 4vw;
+    font-size: 2vh;
+
     color: Yellow;
     text-shadow: 3px 2px red;
     text-align: left;
@@ -182,7 +183,8 @@
   #passesRemaining {
     top: 20px;
     position: relative;
-    font-size: 4vw;
+    font-size: 2vh;
+
     color: Yellow;
     text-shadow: 3px 2px red;
     text-align: left;
@@ -206,7 +208,7 @@
     font-family: CabinSketch;
     width: 80%;
     height: 19%;
-
+    font-size: 6vw
 
   }
 
@@ -279,9 +281,13 @@
 
 /* Desktop Styles */
 @media only screen and (min-width: 1000px) {
+  html {
+    height: 100%;
+  }
   body {
-    background-color: #1E90FF;
-    margin: 0; padding: 0; height: 100%; width: 100%;
+    background-color: #ff5e5e;
+    height: 100%;
+
   }
 
   button {
@@ -293,70 +299,241 @@
 
     text-decoration: none;
     display: inline-block;
-    font-size: 60px;
+    font-size: 3vw;
     margin: 4px 2px;
     cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
+
+
     transition-duration: 0.4s;
     text-align: center;
 
   }
-
   button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    -webkit-transition-duration: 0.4s; /* Safari */
   }
 
+  .questionsInfo {
+    height: 10%
+  }
+
+  .possibleAnswers {
+    font-family: CabinSketch;
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+    height: 10%
+
+  }
+  #quizzicalAppContainer {
+    height: 100%
+  }
+  .header {
+    height: 6.5%;
+  }
+  .nav {
+    height: 100%
+  }
+
+  #homeLink {
+    text-decoration: none;
+    color: Yellow;
+    height: 100%;
+    text-shadow: 3px 2px red;
+    text-shadow: 6px 4px 8px red;
+  }
+
+  #homeLinkContainer {
+    margin-left: 15px;
+    height: 100%;
+    font-size: 55px;
+    font-family: Welcome;
+    text-decoration: none;
+
+    color: Yellow;
+
+  }
+
+  #indexPage {
+    height: 93.5%;
+  }
+
+  #titleContainer {
+    height: 45%;
+  }
+
+
   #title {
+    height: 30%;
+    position: relative;
+    top: 60%;
     text-align: center;
     font-family: Welcome;
-    font-size: 150px;
+    font-size: 23vw;
+    font-size: 11vh;
+    color: Yellow;
+    text-shadow: 15px 10px 15px red;
+  }
+
+
+  #startButtonsContainer {
+
+    height: 40%;
+
+  }
+
+  #startFormContainer {
+    height: 100%;
+
+
+    text-align: center;
+  }
+
+
+  .indexButton {
+    font-family: CabinSketch;
+    height: 30%;
+    width: 30%;
+
+  }
+
+  #howToPlayInstructions {
+    font-family: CabinSketch;
+    position: relative;
+    top: 40px;
+    height: 20%;
+    font-size: 100%;
+
+    color: Yellow;
+    text-shadow: 3px 2px red;
+    text-align: center;
+  }
+
+  #questionsPage {
+    font-family: CabinSketch;
+    height: 93.5%;
+  }
+  #questionsInfoLeft {
+    height: 100%;
+    width: 50%;
+    float: left;
+  }
+
+  #questionsInfoRight {
+    height: 100%;
+    width: 50%;
+    float: right;
+  }
+  #questionNumber {
+    top: 10px;
+    position: relative;
+    font-size: 2.4vh;
+    color: Yellow;
+    text-shadow: 3px 2px red;
+    text-align: right;
+    margin-right: 20px
+  }
+
+  #livesRemaining {
+    top: 10px;
+    position: relative;
+    font-size: 2.4vh;
+    color: Yellow;
+    text-shadow: 3px 2px red;
+    text-align: left;
+    margin-left: 20px
+  }
+  #passesRemaining {
+    top: 20px;
+    position: relative;
+    font-size: 2.4vh;
+    color: Yellow;
+    text-shadow: 3px 2px red;
+    text-align: left;
+    margin-left: 20px
+  }
+
+  #questionArea {
+    height: 90%
+  }
+
+  #questionTextArea {
+    height: 40%
+
+  }
+  #possibleAnswers {
+    height: 65%;
+    text-align: center;
+  }
+
+  .anwserSelectionButton {
+    font-family: CabinSketch;
+    width: 20%;
+    height: 30%;
+    font-size: 1.5vw;
+    padding-top: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-bottom: 0%;
+  }
+
+  #passButton {
+    background-color: yellow;
+    width: 40%;
+    height: 19%;
+    font-size: 3vw;
+    top: 20px;
+    position: relative;
+  }
+
+
+
+
+
+
+  #question {
+    font-family: CabinSketch;
+    text-align: center;
+    height:100%;
+    color: Yellow;
+    font-size: 4.5vh;
+    text-shadow: 2px 1px red;
+    margin-left: 20px;
+    margin-right: 20px;
+    top: 20px;
+    position: relative;
+  }
+
+
+
+
+  #gameOverPage {
+    font-family: CabinSketch;
+    height: 93.5%;
+    text-align: center;
+    font-size: 6vw;
+    font-size: 3vh;
     color: Yellow;
     text-shadow: 3px 2px red;
   }
 
-  #homeLink {
-    text-align: right;
-    font-family: Welcome;
-    text-decoration: none;
-    font-size: 120px;
-    color: Yellow;
-    text-shadow: 1.5px 1px red;
-  }
-
-  .startHowToPlayOption {
-    height: 200px;
-    text-align: center;
+  #gameOver {
     position: relative;
-    bottom: 0px;
-  }
-  .startHowToPlayButton {
-    height: 200px;
-    width: 80%
+    top: 43%
   }
 
-  #question {
+  #youWinPage {
+    font-family: CabinSketch;
+    height: 93.5%;
     text-align: center;
-
+    font-size: 6vw;
+    font-size: 3vh;
     color: Yellow;
-    font-size: 80px;
-    text-shadow: 2px 1px red;
+    text-shadow: 3px 2px red;
   }
 
-
-  .howToPlay {
-    text-align: center;
-    font-family: 'Abel', sans-serif;
-    color: Yellow;
-    font-size: 20px;
-    text-shadow: 1px 0.5px red;
+  #youWin {
     position: relative;
-    bottom: 0px;
-  }
-
-  .possibleAnswers {
-    margin: 15px;
-    padding: 15px;
-    text-align: center;
-
+    top: 43%
   }
 }
