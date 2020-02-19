@@ -1,17 +1,24 @@
+sudo: required
+dist: trusty
 language: ruby
 rvm:
- - 2.6.3
+   - 2.6.3
 services:
-- postgresql
+  - postgresql
 addons:
-  postgresql: "11.5"
+  firefox: latest
 before_install:
-  - sudo apt-get install postgresql-9.5 postgresql-server-dev-9.5 libpq-dev
-  - gem install do_postgres -v '0.10.17'
+  - sudo apt-get update
+  - sudo apt-get install dbus-x11
+  - export DISPLAY=:99.0
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+  - tar -xzf geckodriver-v0.26.0-linux64.tar.gz
+  - sudo cp geckodriver /usr/bin
+  - sudo apt-get install postgresql-server-dev-all
 install:
   - bundle install
 before_script:
-   - psql -c 'create database quizzical_test;' -U postgres
+  - psql -c 'create database quizzical_test;' -U postgres
 script:
-- bundle exec rake db_populate
-- bundle exec rspec
+  - bundle exec rake db_populate
+  - bundle exec rspec

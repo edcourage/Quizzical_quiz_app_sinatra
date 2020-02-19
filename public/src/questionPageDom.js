@@ -2,9 +2,11 @@ function PreSubmit(selectedAnswer, correctAnswer){
   form = document.getElementById("questionForm")
 
   if (selectedAnswer == correctAnswer) {
-    document.getElementById(selectedAnswer).style.color = "#73e600";
+    document.getElementById(selectedAnswer).style.backgroundColor = "#73e600";
+    document.getElementById(selectedAnswer).style.color = "white";
   } else if (selectedAnswer != correctAnswer && selectedAnswer != 'Pass') {
-    document.getElementById(selectedAnswer).style.color = "red";
+    document.getElementById(selectedAnswer).style.backgroundColor = "red";
+    document.getElementById(selectedAnswer).style.color = "white";
   }
   selectedInput = document.createElement("INPUT");
   selectedInput.setAttribute("type", "hidden")

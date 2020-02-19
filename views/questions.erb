@@ -23,7 +23,7 @@
       <button id="<%= @question.answer_1 %>" class='anwserSelectionButton'type="button" onclick="PreSubmit('<%= @question.answer_1 %>','<%= @question.correct_answer %>')"> <%= @question.answer_1 %> </button>
       <button id="<%= @question.answer_2 %>" class='anwserSelectionButton'type="button" onclick="PreSubmit('<%= @question.answer_2 %>','<%= @question.correct_answer %>')"> <%= @question.answer_2 %> </button>
       <button id="<%= @question.answer_3 %>" class='anwserSelectionButton'type="button" onclick="PreSubmit('<%= @question.answer_3 %>','<%= @question.correct_answer %>')"> <%= @question.answer_3 %> </button>
-      <button id="<%= @question.answer_4 %>" class='anwserSelectionButton'type="button" onclick="PreSubmit('<%= @question.answer_4 %>','<%= @question.correct_answer %>')"> <%= @question.answer_4 %> </button>
+      <button id="<%= @question.answer_4 %>" class='anwserSelectionButton'type="button" onclick="PreSubmit('<%= @question.answer_4 %>','<%= @question.correct_answer %>')"> <%= @question.answer_4 %> </button><br>
       <% if @game.passes_remaining > 0 %>
       <button id="passButton" type="button" class='anwserSelectionButton'onclick="PreSubmit('Pass','<%= @question.correct_answer %>')"> Pass </button>
       <% end %>

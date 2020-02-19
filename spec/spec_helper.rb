@@ -7,18 +7,23 @@ require 'rspec'
 require 'data_mapper'
 require 'database_cleaner'
 require 'simplecov'
+require 'selenium-webdriver'
 require 'simplecov-console'
 require './db/questions_table_populator.rb'
 require_relative 'db_helpers'
 
 Capybara.app = Quizzical
-Capybara.javascript_driver = :selenium
+Capybara.default_driver = :selenium_headless
+Capybara.server = :webrick
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Formatter::Console,])
 SimpleCov.start
 
 
 
+
 RSpec.configure do |config|
+
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
@@ -28,16 +33,19 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
+     DatabaseCleaner.clean_with(:truncation)
+   end
 
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
+   config.before(:each) do
+     DatabaseCleaner.strategy = :truncation
+   end
 
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
+   config.before(:each) do
+     DatabaseCleaner.start
+   end
+
+   config.after(:each) do
+     DatabaseCleaner.clean
+   end
 
 end
