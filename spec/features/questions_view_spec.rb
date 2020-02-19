@@ -63,14 +63,14 @@ feature "questions" do
   end
 
 
-  #
-  # scenario "notify if there are no more questions" do
-  #   add_single_question_to_table
-  #   visit '/'
-  #   click_button "Start"
-  #   click_button "Athens"
-  #   expect(page).to have_text("You've run out of questions... come on, you think I've got all day to think of new questions. Play something else!")
-  # end
+
+  scenario "notify if there are no more questions" do
+    add_single_question_to_table
+    visit '/'
+    click_button "Start"
+    click_button "Athens"
+    expect(page).to have_text("You've run out of questions... come on, you think I've got all day to think of new questions. Play something else!")
+  end
 
   context "#lives" do
     scenario "i can see remaining lives" do
@@ -80,23 +80,23 @@ feature "questions" do
       expect(page).to have_css("#livesRemaining", text: "Lives Remaining: 3")
     end
 
-    # scenario "If i get a question wrong I lose a life" do
-    #   add_single_question_to_table
-    #   visit '/'
-    #   click_button "Start"
-    #   click_button "Prague"
-    #   expect(page).to have_css("#livesRemaining", text: "Lives Remaining: 2")
-    # end
-    #
-    # scenario "If i get a question wrong I lose a life" do
-    #   add_single_question_to_table
-    #   visit '/'
-    #   click_button "Start"
-    #   game_id = Game.game_id - 1
-    #   Game.instance(game_id).lives_remaining = 1
-    #   click_button "Prague"
-    #   expect(page).to have_css("#gameOver", text: "Game Over!")
-    # end
+    scenario "If i get a question wrong I lose a life" do
+      add_single_question_to_table
+      visit '/'
+      click_button "Start"
+      click_button "Prague"
+      expect(page).to have_css("#livesRemaining", text: "Lives Remaining: 2")
+    end
+
+    scenario "If i get a question wrong I lose a life" do
+      add_single_question_to_table
+      visit '/'
+      click_button "Start"
+      game_id = Game.game_id - 1
+      Game.instance(game_id).lives_remaining = 1
+      click_button "Prague"
+      expect(page).to have_css("#gameOver", text: "Game Over!")
+    end
   end
 
   context "#passes" do
@@ -106,36 +106,38 @@ feature "questions" do
       click_button "Start"
       expect(page).to have_css("#passesRemaining", text: "Passes Remaining: 2")
     end
-    # scenario "If I select pass, passes remaining amount will decrease" do
-    #   add_single_question_to_table
-    #   visit '/'
-    #   click_button "Start"
-    #   add_second_single_question_to_table
-    #   click_button "Athens"
-    #   click_button "Pass"
-    #   expect(page).to have_css("#passesRemaining", text: "Passes Remaining: 1")
-    # end
-    #
-    # scenario "If I select pass, I will get a new question but the question number will stay the same" do
-    #   add_single_question_to_table
-    #   visit '/'
-    #   click_button "Start"
-    #   add_second_single_question_to_table
-    #   click_button "Athens"
-    #   click_button "Pass"
-    #   expect(page).to have_css("#questionNumber", text: "Question 2 of 10")
-    # end
-    #
-    # scenario "Pass button with not be available once all passes are used up" do
-    #   add_single_question_to_table
-    #   visit '/'
-    #   click_button "Start"
-    #   add_second_single_question_to_table
-    #   click_button "Pass"
-    #   add_third_single_question_to_table
-    #   click_button "Pass"
-    #   expect(page).to_not have_css("#passButton")
-    # end
+    scenario "If I select pass, passes remaining amount will decrease" do
+      add_single_question_to_table
+      visit '/'
+      click_button "Start"
+      add_second_single_question_to_table
+      click_button "Athens"
+      click_button "Pass"
+      expect(page).to have_css("#passesRemaining", text: "Passes Remaining: 1")
+
+    end
+
+    scenario "If I select pass, I will get a new question but the question number will stay the same" do
+      add_single_question_to_table
+      visit '/'
+      click_button "Start"
+      add_second_single_question_to_table
+      click_button "Athens"
+      expect(page).to have_css("#questionNumber", text: "Question 2 of 10")
+      click_button "Pass"
+      expect(page).to have_css("#questionNumber", text: "Question 2 of 10")
+    end
+
+    scenario "Pass button with not be available once all passes are used up" do
+      add_single_question_to_table
+      visit '/'
+      click_button "Start"
+      add_second_single_question_to_table
+      click_button "Pass"
+      add_third_single_question_to_table
+      click_button "Pass"
+      expect(page).to_not have_css("#passButton")
+    end
 
   end
 
