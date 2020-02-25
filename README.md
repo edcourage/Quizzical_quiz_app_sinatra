@@ -7,7 +7,7 @@ _Copy and paste the below into the terminal_
 - `rake db_create`
 - `rake db_populate`
 
-### User Storys
+### User Stories
 ```
 As a player
 So I know what game I'm playing
