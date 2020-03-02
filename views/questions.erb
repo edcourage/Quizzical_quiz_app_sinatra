@@ -4,7 +4,18 @@
 <script src="src/questionPageDom.js"></script>
 <div class="questionsInfo">
   <div id="questionsInfoLeft">
-    <h4 id="livesRemaining" >Lives Remaining: <%=@game.lives_remaining%></h4>
+    <% if @game.lives_remaining == 3 %>
+    <img class="beatingHeart" src="images/beating_heart.gif" alt="lives_heart">
+    <img class="beatingHeart" src="images/beating_heart.gif" alt="lives_heart">
+    <img class="beatingHeart" src="images/beating_heart.gif" alt="lives_heart">
+    <% elsif @game.lives_remaining == 2 %>
+    <img class="beatingHeart" src="images/beating_heart.gif" alt="lives_heart">
+    <img class="beatingHeart" src="images/beating_heart.gif" alt="lives_heart">
+      <% else %>
+      <img class="beatingHeart" src="images/beating_heart.gif" alt="lives_heart">
+      <%end%>
+
+
     <h4 id="passesRemaining" >Passes Remaining: <%=@game.passes_remaining%></h4>
   </div>
   <div id="questionsInfoRight">

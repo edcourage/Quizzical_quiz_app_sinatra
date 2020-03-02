@@ -77,7 +77,7 @@ feature "questions" do
       add_single_question_to_table
       visit '/'
       click_button "Start"
-      expect(page).to have_css("#livesRemaining", text: "Lives Remaining: 3")
+      expect(page).to have_css(".beatingHeart", count: 3)
     end
 
     scenario "If i get a question wrong I lose a life" do
@@ -85,10 +85,10 @@ feature "questions" do
       visit '/'
       click_button "Start"
       click_button "Prague"
-      expect(page).to have_css("#livesRemaining", text: "Lives Remaining: 2")
+      expect(page).to have_css(".beatingHeart", count: 2)
     end
 
-    scenario "If i get a question wrong I lose a life" do
+    scenario "If i run out of lives its game over" do
       add_single_question_to_table
       visit '/'
       click_button "Start"

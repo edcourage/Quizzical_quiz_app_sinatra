@@ -1,0 +1,71 @@
+<html dir="ltr" lang="en"><head>
+  <meta charset="UTF-8">
+
+
+  <title>Quizzical</title>
+  <link rel="icon" href="images/quizzical_logo.png" type="image/x-icon">
+  <script src="jQuery.js"></script>
+
+
+  <script src="src/interface.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Abel&amp;display=swap" rel="stylesheet">
+  <link href="/styles.css" rel="stylesheet">
+</head>
+<body>
+  <div id="quizzicalAppContainer">
+    <header class="header">
+    <nav class="nav">
+      <h4 id="homeLinkContainer"><a id="homeLink" href="/">Q</a></h4>
+
+    </nav>
+  </header>
+
+  <div id="questionsPage">
+
+
+<script src="src/questionPageDom.js"></script>
+<div class="questionsInfo">
+  <div id="questionsInfoLeft">
+    
+    <img class="beatingHeart" src="images/beating_heart.gif" alt="lives_heart">
+    <img class="beatingHeart" src="images/beating_heart.gif" alt="lives_heart">
+    <img class="beatingHeart" src="images/beating_heart.gif" alt="lives_heart">
+    
+
+
+    <h4 id="passesRemaining">Passes Remaining: 2</h4>
+  </div>
+  <div id="questionsInfoRight">
+    <h4 id="questionNumber">Question 1 of 10</h4>
+  </div>
+
+  </div>
+
+  
+  <div id="questionArea">
+    <div id="questionTextArea">
+      <h3 id="question"> The Plaka is the oldest quarter of which city?</h3>
+    </div>
+
+    <div id="possibleAnswers">
+      <button id="Athens" class="anwserSelectionButton" type="button" onclick="PreSubmit('Athens','Athens')"> Athens </button>
+      <button id="Prague" class="anwserSelectionButton" type="button" onclick="PreSubmit('Prague','Athens')" style="background-color: red; color: white;"> Prague </button>
+      <button id="Rome" class="anwserSelectionButton" type="button" onclick="PreSubmit('Rome','Athens')"> Rome </button>
+      <button id="Vienna" class="anwserSelectionButton" type="button" onclick="PreSubmit('Vienna','Athens')"> Vienna </button><br>
+      
+      <button id="passButton" type="button" class="anwserSelectionButton" onclick="PreSubmit('Pass','Athens')"> Pass </button>
+      
+      <form action="/questions" method="post" id="questionForm" onsubmit="return PreSubmit()">
+      <input type="hidden" name="selected_answer" value="Prague"><input type="hidden" name="correct_answer" value="Athens"></form>
+    </div>
+  </div>
+
+  
+</div>
+
+    </div>
+
+
+
+</body></html>
